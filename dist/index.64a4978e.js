@@ -547,9 +547,9 @@ const boxMaterial = new _three.MeshBasicMaterial({
 });
 const box = new _three.Mesh(boxGeometry, boxMaterial);
 scene.add(box);
-function animate() {
-    box.rotation.x += 0.01;
-    box.rotation.y += 0.01;
+function animate(time) {
+    box.rotation.x = time / 1000;
+    box.rotation.y = time / 1000;
     renderer.render(scene, camera);
 }
 renderer.setAnimationLoop(animate);
