@@ -18,6 +18,7 @@ const axesHelper = new THREE.AxesHelper(3);
 scene.add(axesHelper);
 
 camera.position.set(0, 2, 5);
+orbit.update();
 
 const boxGeometry = new THREE.BoxGeometry();
 const boxMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });

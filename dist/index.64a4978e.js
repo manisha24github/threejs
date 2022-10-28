@@ -543,6 +543,7 @@ const orbit = new (0, _orbitControlsJs.OrbitControls)(camera, renderer.domElemen
 const axesHelper = new _three.AxesHelper(3);
 scene.add(axesHelper);
 camera.position.set(0, 2, 5);
+orbit.update();
 const boxGeometry = new _three.BoxGeometry();
 const boxMaterial = new _three.MeshBasicMaterial({
     color: 0x00ff00
