@@ -20,4 +20,7 @@ const boxMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
 const box = new THREE.Mesh(boxGeometry, boxMaterial);
 scene.add(box);
 
+box.rotation.x = 5;
+box.rotation.y = 5;
+
 renderer.render(scene, camera);

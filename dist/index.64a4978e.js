@@ -547,6 +547,8 @@ const boxMaterial = new _three.MeshBasicMaterial({
 });
 const box = new _three.Mesh(boxGeometry, boxMaterial);
 scene.add(box);
+box.rotation.x = 5;
+box.rotation.y = 5;
 renderer.render(scene, camera);
 
 },{"three":"ktPTu"}],"ktPTu":[function(require,module,exports) {
