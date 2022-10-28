@@ -547,9 +547,11 @@ const boxMaterial = new _three.MeshBasicMaterial({
 });
 const box = new _three.Mesh(boxGeometry, boxMaterial);
 scene.add(box);
-box.rotation.x = 5;
-box.rotation.y = 5;
-renderer.render(scene, camera);
+function animate() {
+    box.rotation.x += 0.01;
+    box.rotation.y += 0.01;
+    renderer.render(scene, camera);
+}
 
 },{"three":"ktPTu"}],"ktPTu":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
