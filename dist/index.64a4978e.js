@@ -540,8 +540,7 @@ const scene = new _three.Scene();
 const camera = new _three.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const axesHelper = new _three.AxesHelper(3);
 scene.add(axesHelper);
-camera.position.z = 5;
-camera.position.y = z;
+camera.position.set(0, 2, 5);
 renderer.render(scene, camera);
 
 },{"three":"ktPTu"}],"ktPTu":[function(require,module,exports) {
