@@ -26,11 +26,13 @@ const box = new THREE.Mesh(boxGeometry, boxMaterial);
 scene.add(box);
 
 const planeGeometry = new THREE.PlaneGeometry(30, 30);
-const planeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+const planeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide });
+
 const plane = new THREE.Mesh(planeGeometry, planeMaterial);
 scene.add(plane);
+plane.rotation.x = -0.5 * Math.PI;
 
-const gridHelper = new THREE.GridHelper(30, 100);
+const gridHelper = new THREE.GridHelper(30);
 scene.add(gridHelper);
 
 function animate(time) {
