@@ -30,7 +30,7 @@ const planeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
 const plane = new THREE.Mesh(planeGeometry, planeMaterial);
 scene.add(plane);
 
-const gridHelper = new THREE.GridHelper();
+const gridHelper = new THREE.GridHelper(30, 100);
 scene.add(gridHelper);
 
 function animate(time) {
