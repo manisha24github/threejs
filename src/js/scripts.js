@@ -15,4 +15,9 @@ scene.add(axesHelper);
 
 camera.position.set(0, 2, 5);
 
+const boxGeometry = new THREE.BoxGeometry();
+const boxMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const box = new THREE.Mesh(boxGeometry, boxMaterial);
+scene.add(box);
+
 renderer.render(scene, camera);
