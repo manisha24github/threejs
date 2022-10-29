@@ -561,8 +561,9 @@ plane.rotation.x = -0.5 * Math.PI;
 const gridHelper = new _three.GridHelper(30);
 scene.add(gridHelper);
 const sphereGeometry = new _three.SphereGeometry(4);
-const spherGeometry = new _three.MeshBasicMaterial({
-    color: 0x000000
+const sphereMaterial = new _three.MeshBasicMaterial({
+    color: 0x0000ff,
+    wireframe: true
 });
 const sphere = new _three.Mesh(sphereGeometry, sphereMaterial);
 scene.add(sphere);
