@@ -51,6 +51,10 @@ const options = {
   sphereColor: '#ffea00',
 };
 
+gui.addColor(options, 'sphereColor').onChange(function (e) {
+  sphere.material.color.set(e);
+});
+
 function animate(time) {
   box.rotation.x = time / 1000;
   box.rotation.y = time / 1000;
