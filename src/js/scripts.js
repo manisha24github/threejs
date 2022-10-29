@@ -49,15 +49,27 @@ const gui = new dat.GUI();
 
 const options = {
   sphereColor: '#ffea00',
+  wireframe: false,
+  speed: 0.1,
 };
 
 gui.addColor(options, 'sphereColor').onChange(function (e) {
   sphere.material.color.set(e);
 });
 
+gui.add(options, 'wireframe').onChange(function (e) {
+  sphere.material.wireframe = e;
+});
+
+gui.add(options, 'speed', 0, 0.1);
+
+let step = 0;
+
 function animate(time) {
   box.rotation.x = time / 1000;
   box.rotation.y = time / 1000;
+  step += positions.speed;
+  sphere.position.y = 10 * Math.abs(Math.sin(step));
   renderer.render(scene, camera);
 }
 
