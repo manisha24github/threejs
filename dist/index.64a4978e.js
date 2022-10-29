@@ -570,6 +570,9 @@ const sphere = new _three.Mesh(sphereGeometry, sphereMaterial);
 scene.add(sphere);
 sphere.position.set(-10, 10, 0);
 const gui = new _datGui.GUI();
+const options = {
+    sphereColor: "#ffea00"
+};
 function animate(time) {
     box.rotation.x = time / 1000;
     box.rotation.y = time / 1000;
