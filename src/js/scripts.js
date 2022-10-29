@@ -4,6 +4,8 @@ import * as dat from 'dat.gui';
 
 const renderer = new THREE.WebGLRenderer();
 
+renderer.shadowMap.enabled = true;
+
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 document.body.appendChild(renderer.domElement);
@@ -34,6 +36,7 @@ const planeMaterial = new THREE.MeshBasicMaterial({
 const plane = new THREE.Mesh(planeGeometry, planeMaterial);
 scene.add(plane);
 plane.rotation.x = -0.5 * Math.PI;
+plane.receiveShadow = true;
 
 const gridHelper = new THREE.GridHelper(30);
 scene.add(gridHelper);
