@@ -68,7 +68,7 @@ let step = 0;
 function animate(time) {
   box.rotation.x = time / 1000;
   box.rotation.y = time / 1000;
-  step += positions.speed;
+  step += options.speed;
   sphere.position.y = 10 * Math.abs(Math.sin(step));
   renderer.render(scene, camera);
 }

@@ -1,5 +1,5 @@
 node_modules/
 
 # Parcel related files
-
+.parcel-cache/
 dist/
