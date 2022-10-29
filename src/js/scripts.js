@@ -48,6 +48,9 @@ sphere.position.set(-10, 10, 0);
 const ambientLight = new THREE.AmbientLight(0x333333);
 scene.add(ambientLight);
 
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+scene.add(dLightHelper);
+
 const gui = new dat.GUI();
 
 const options = {
