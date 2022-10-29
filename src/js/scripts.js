@@ -49,7 +49,10 @@ const ambientLight = new THREE.AmbientLight(0x333333);
 scene.add(ambientLight);
 
 const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-scene.add(dLightHelper);
+scene.add(directionalLight);
+
+const dLightHelper = new THREE.DirectionalLightHelper(directionalLight);
+scene.add(directionalLight);
 
 const gui = new dat.GUI();
 
