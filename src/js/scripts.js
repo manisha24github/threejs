@@ -72,6 +72,7 @@ scene.add(ambientLight);
 const spotLight = new THREE.SpotLight(0xffffff);
 scene.add(spotLight);
 spotLight.position.set(-100, 100, 0);
+spotLight.castShadow = true;
 const sLightHelper = new THREE.SpotLightHelper(spotLight);
 scene.add(sLightHelper);
 
