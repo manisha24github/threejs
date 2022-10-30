@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls, orbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import * as dat from 'dat.gui';
+import { DirectionalLight } from 'three';
 
 const renderer = new THREE.WebGLRenderer();
 
@@ -52,17 +53,24 @@ sphere.castShadow = true;
 const ambientLight = new THREE.AmbientLight(0x333333);
 scene.add(ambientLight);
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-scene.add(directionalLight);
-directionalLight.position.set(-30, 50, 0);
-directionalLight.castShadow = true;
-directionalLight.shadow.camera.bottom = -12;
+// Second--- DirectionalLight
 
-const dLightHelper = new THREE.DirectionalLightHelper(directionalLight, 5);
-scene.add(directionalLight);
+// const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+// scene.add(directionalLight);
+// directionalLight.position.set(-30, 50, 0);
+// directionalLight.castShadow = true;
+// directionalLight.shadow.camera.bottom = -12;
 
-const dLightShadowHelper = new THREE.CameraHelper(directionalLight.shadow.camera);
-scene.add(dLightShadowHelper);
+// const dLightHelper = new THREE.DirectionalLightHelper(directionalLight, 5);
+// scene.add(directionalLight);
+
+// const dLightShadowHelper = new THREE.CameraHelper(directionalLight.shadow.camera);
+// scene.add(dLightShadowHelper);
+
+// Create Third Light : SpotLight
+
+const spotLight = new THREE.SpotLight(0xffffff);
+scene.add(spotLight);
 
 const gui = new dat.GUI();
 
