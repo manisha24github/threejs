@@ -142,6 +142,8 @@ window.addEventListener('mousemove', function (e) {
   mousePosition.y = -(e.clientY / this.window.innerHeight) * 2 + 1;
 });
 
+const rayCaster = new THREE.Raycaster();
+
 function animate(time) {
   box.rotation.x = time / 1000;
   box.rotation.y = time / 1000;
