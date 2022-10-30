@@ -135,6 +135,7 @@ gui.add(options, 'penumbra', 0, 1);
 gui.add(options, 'intensity', 0, 1);
 
 let step = 0;
+const mousePosition = new THREE.Vector2();
 
 function animate(time) {
   box.rotation.x = time / 1000;
