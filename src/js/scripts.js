@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls, orbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import * as dat from 'dat.gui';
-import { DirectionalLight } from 'three';
+import { DirectionalLight, SpotLightHelper } from 'three';
 
 const renderer = new THREE.WebGLRenderer();
 
@@ -73,6 +73,8 @@ const spotLight = new THREE.SpotLight(0xffffff);
 scene.add(spotLight);
 spotLight.position.set(-100, 100, 0);
 spotLight.castShadow = true;
+SpotLight.angle = 0.2;
+
 const sLightHelper = new THREE.SpotLightHelper(spotLight);
 scene.add(sLightHelper);
 
@@ -82,6 +84,9 @@ const options = {
   sphereColor: '#ffea00',
   wireframe: false,
   speed: 0.1,
+  angle: 0.2,
+  penumbra: 0,
+  intensity: 1,
 };
 
 gui.addColor(options, 'sphereColor').onChange(function (e) {
@@ -94,6 +99,10 @@ gui.add(options, 'wireframe').onChange(function (e) {
 
 gui.add(options, 'speed', 0, 0.1);
 
+gui.add(options, 'angle', 0, 0.1);
+gui.add(options, 'penumbra', 0, 1);
+gui.add(options, 'intensity', 0, 1);
+
 let step = 0;
 
 function animate(time) {
@@ -101,6 +110,12 @@ function animate(time) {
   box.rotation.y = time / 1000;
   step += options.speed;
   sphere.position.y = 10 * Math.abs(Math.sin(step));
+
+  spotLight.angle = options.angle;
+  spotLight.penumbra = options.penumbra;
+  spotLight.intensity = options.intensity;
+  sLightHelper.update();
+
   renderer.render(scene, camera);
 }
 
