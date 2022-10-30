@@ -73,10 +73,12 @@ const spotLight = new THREE.SpotLight(0xffffff);
 scene.add(spotLight);
 spotLight.position.set(-100, 100, 0);
 spotLight.castShadow = true;
-SpotLight.angle = 0.2;
+spotLight.angle = 0.2;
 
 const sLightHelper = new THREE.SpotLightHelper(spotLight);
 scene.add(sLightHelper);
+
+scene.fog = new THREE.Fog(0xffffff, 0, 200);
 
 const gui = new dat.GUI();
 
