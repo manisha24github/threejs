@@ -89,6 +89,7 @@ const textureLoader = new THREE.TextureLoader();
 //scene.background = textureLoader.load(stars);
 
 const cubeTextureLoader = new THREE.CubeTextureLoader();
+scene.background = cubeTextureLoader.load([nebula, nebula, stars, stars, stars, stars]);
 
 const gui = new dat.GUI();
 
