@@ -3,6 +3,9 @@ import { OrbitControls, orbitControls } from 'three/examples/jsm/controls/OrbitC
 import * as dat from 'dat.gui';
 import { DirectionalLight, SpotLightHelper } from 'three';
 
+import nebula from '../img/nebula.jpg';
+import stars from '../img/stars.jpg';
+
 const renderer = new THREE.WebGLRenderer();
 
 renderer.shadowMap.enabled = true;
