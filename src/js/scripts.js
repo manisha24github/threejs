@@ -155,6 +155,8 @@ function animate(time) {
   spotLight.intensity = options.intensity;
   sLightHelper.update();
 
+  rayCaster.setFromCamera(mousePosition, camera);
+
   renderer.render(scene, camera);
 }
 
