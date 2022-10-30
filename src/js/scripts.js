@@ -137,7 +137,10 @@ gui.add(options, 'intensity', 0, 1);
 let step = 0;
 const mousePosition = new THREE.Vector2();
 
-window.addEventListener('mousemove', function (e) {});
+window.addEventListener('mousemove', function (e) {
+  mousePosition.x = (e.clientX / window.innerWidth) * 2 - 1;
+  mousePosition.y = -(e.clientY / this.window.innerHeight) * 2 + 1;
+});
 
 function animate(time) {
   box.rotation.x = time / 1000;
