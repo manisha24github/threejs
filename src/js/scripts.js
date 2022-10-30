@@ -85,7 +85,8 @@ scene.add(sLightHelper);
 scene.fog = new THREE.FogExp2(0xffffff, 0.01);
 //renderer.setClearColor(0xffea00);
 
-const textureLoader = new THREE.TextureLoader(stars);
+const textureLoader = new THREE.TextureLoader();
+scene.background = textureLoader.load(stars);
 
 const gui = new dat.GUI();
 
