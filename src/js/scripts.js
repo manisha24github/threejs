@@ -71,6 +71,9 @@ scene.add(ambientLight);
 
 const spotLight = new THREE.SpotLight(0xffffff);
 scene.add(spotLight);
+spotLight.position.set(-100, 100, 0);
+const sLightHelper = new THREE.SpotLightHelper(spotLight);
+scene.add(sLightHelper);
 
 const gui = new dat.GUI();
 
